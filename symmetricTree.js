@@ -20,24 +20,8 @@ const addRightChild = function(node, child) {
     node.right = child;
 }
 
-const traversal = function(node, arr) {
-      
-   
-    if(node.left != null) {
-        traversal(node.left, arr);
-    }
-    arr.push(node.val);
-    //console.log(node.val);
-    if(node.right != null) {
-        traversal(node.right, arr);
-    }
-
-}
-
 var isSymmetric = function(root) {
 
-    let arr1 = [];
-    let arr2 = [];
     let stack1 = [];
     let stack2 = [];
     let  currentNode1 = root;
@@ -64,17 +48,11 @@ var isSymmetric = function(root) {
                return false;
             }
         }
-
-        // if(currentNode1)
-        //    arr1.push( currentNode1.val);
-        // if(currentNode2)   
-        //    arr2.push(currentNode2.val);
         if(currentNode1)   
            currentNode1 =  currentNode1.right;
         if(currentNode2)   
            currentNode2 = currentNode2.left;
     }
-   // return { arr1, arr2 };
     return true;
 
 };
@@ -92,9 +70,9 @@ const main = function() {
 
     addLeftChild(root, two1);
     addRightChild(root, two2);
-    //addLeftChild(two1, four1);
+    addLeftChild(two1, four1);
     addRightChild(two1, three1);
-    //addLeftChild(two2, four2);
+    addLeftChild(two2, four2);
     addRightChild(two2, three2);
 
     console.log(isSymmetric(root));
