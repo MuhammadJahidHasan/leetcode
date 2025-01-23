@@ -23,7 +23,7 @@ class CreateNode {
     constructor(val) {
         this.val = val;
         this.left = null;
-        this.rightChild = null;
+        this.right = null;
 
     }
 }
@@ -33,7 +33,7 @@ const addLeftChild = function(parentNode , childNode) {
 }
 
 const addRightChild = function(parentNode , childNode) {
-    parentNode.rightChild = childNode;
+    parentNode.right = childNode;
 
 
 }
@@ -44,8 +44,8 @@ const inOrderTravers = function(rootNode) {
         inOrderTravers(rootNode.left);
      }
     
-     if(rootNode.rightChild) {
-        inOrderTravers(rootNode.rightChild);
+     if(rootNode.right) {
+        inOrderTravers(rootNode.right);
      }
 }
 
